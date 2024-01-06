@@ -1,0 +1,12 @@
+version: '3'
+services:
+    vintagestory-server:
+        build:
+            context: .
+        ports:
+            - "42420:42420"
+        volumes:
+            - ./data:/home/vintagestory/server/data
+        environment:
+            - USERNAME=vintagestory
+            - VSPATH=/home/vintagestory/server
