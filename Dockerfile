@@ -19,15 +19,15 @@ WORKDIR /home/vintagestory/server
 
 COPY init-script.sh /home/vintagestory/server/init-script.sh
 
-ARG VS_VERSION=1.18.8
-RUN wget https://cdn.vintagestory.at/gamefiles/stable/vs_server_linux-x64_${VS_VERSION}.tar.gz \
+ARG VS_VERSION=1.19.0-rc.6
+RUN wget https://cdn.vintagestory.at/gamefiles/unstable/vs_server_linux-x64_${VS_VERSION}.tar.gz \
     && tar xzf vs_server_linux-x64_${VS_VERSION}.tar.gz \
     && rm vs_server_linux-x64_${VS_VERSION}.tar.gz
 
-RUN chown -R vintagestory:vintagestory /home/vintagestory/server \
-    && chown -R vintagestory:vintagestory /home/vintagestory/server/init-script.sh \
-    && chmod +x /home/vintagestory/server/init-script.sh \
-    && chmod +x server.sh
+RUN chown -R vintagestory:vintagestory /home/vintagestory/server 
+RUN chown -R vintagestory:vintagestory /home/vintagestory/server/init-script.sh 
+RUN chmod +x /home/vintagestory/server/init-script.sh 
+RUN chmod +x server.sh
 
 USER vintagestory
 
