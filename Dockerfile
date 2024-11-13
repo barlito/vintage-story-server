@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:20.04
 
 RUN apt-get update \
     && apt-get install -y wget tar pcregrep screen \
@@ -19,8 +19,8 @@ WORKDIR /home/vintagestory/server
 
 COPY init-script.sh /home/vintagestory/server/init-script.sh
 
-ARG VS_VERSION=1.19.0-rc.6
-RUN wget https://cdn.vintagestory.at/gamefiles/unstable/vs_server_linux-x64_${VS_VERSION}.tar.gz \
+ARG VS_VERSION=1.19.8
+RUN wget https://cdn.vintagestory.at/gamefiles/stable/vs_server_linux-x64_${VS_VERSION}.tar.gz \
     && tar xzf vs_server_linux-x64_${VS_VERSION}.tar.gz \
     && rm vs_server_linux-x64_${VS_VERSION}.tar.gz
 
