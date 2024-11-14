@@ -353,7 +353,7 @@
   "AllowFallingBlocks": true,
   "HostedMode": false,
   "HostedModeAllowMods": false,
-  "StartupCommands": null,
+  "StartupCommands": "/op Barlito",
   "RepairMode": false,
   "AnalyzeMode": false,
   "CorruptionProtection": true,
